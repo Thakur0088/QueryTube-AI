@@ -9,8 +9,12 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:8000', // Replace with your backend URL
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/api/, ''), // Rewrite '/api' to ''
       },
     },
+  },
+  build: {
+    outDir: 'dist', // Ensure the output directory is set for Vercel
+    emptyOutDir: true, // Clear the output directory before building
   },
 })
