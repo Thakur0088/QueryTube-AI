@@ -1,109 +1,115 @@
-# 🚀 QueryTube-AI — Intelligent YouTube Semantic Search Platform
-
+🚀 QueryTube-AI — Intelligent YouTube Semantic Search Platform
 <p align="center">
-  <img src="QueryTube-AI/Screenshots/ss2.png" alt="QueryTube-AI Banner" width="80%" />
+  <img src="QueryTube-AI/Screenshots/ss2.png" alt="QueryTube-AI Banner" width="80%" />
 </p>
 
 <p align="center">
-  <a href="https://fastapi.tiangolo.com/">
-    <img src="https://img.shields.io/badge/FastAPI-latest-009688?style=flat&logo=fastapi" alt="FastAPI">
-  </a>
-  <a href="https://vitejs.dev/">
-    <img src="https://img.shields.io/badge/Vite-latest-646CFF?style=flat&logo=vite" alt="Vite">
-  </a>
-  <a href="https://tailwindcss.com/">
-    <img src="https://img.shields.io/badge/TailwindCSS-latest-06B6D4?style=flat&logo=tailwindcss" alt="TailwindCSS">
-  </a>
-  <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3.11-blue?style=flat&logo=python" alt="Python">
-  </a>
-  <a href="https://nodejs.org/">
-    <img src="https://img.shields.io/badge/Node.js-latest-339933?style=flat&logo=node.js" alt="Node.js">
-  </a>
+  <a href="https://fastapi.tiangolo.com/">
+    <img src="https://img.shields.io/badge/FastAPI-latest-009688?style=flat&logo=fastapi" alt="FastAPI">
+  </a>
+  <a href="https://vitejs.dev/">
+    <img src="https://img.shields.io/badge/Vite-latest-646CFF?style=flat&logo=vite" alt="Vite">
+  </a>
+  <a href="https://tailwindcss.com/">
+    <img src="https://img.shields.io/badge/TailwindCSS-latest-06B6D4?style=flat&logo=tailwindcss">
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.11-blue?style=flat&logo=python" alt="Python">
+  </a>
+  <a href="https://nodejs.org/">
+    <img src="https://img.shields.io/badge/Node.js-latest-339933?style=flat&logo=node.js" alt="Node.js">
+  </a>
 </p>
 
----
+📖 Overview
+QueryTube-AI is a semantic search platform for YouTube that allows users to search through video transcripts and metadata using natural language.  
+Built with a FastAPI backend and a modern Vite + Tailwind frontend, it provides lightning-fast vector search, clean UI, and easy deployment options.
 
-## 📖 Overview
+🌟 Features
+🔍 Semantic Search — Find exact video moments using natural language queries  
 
-**QueryTube-AI** is a semantic search platform for YouTube that allows users to **search through video transcripts and metadata using natural language**.  
-Built with a **FastAPI backend** and a **modern Vite + Tailwind frontend**, it provides lightning-fast vector search, clean UI, and easy deployment options.
+🧠 Transcript & Metadata Processing — Automatic transcript fetching and embedding  
 
----
+⚡ Vector Search — Fast similarity search powered by modern ML models  
 
-## 🌟 Features
+🧰 Modern UI — Responsive frontend with TailwindCSS and Vite  
 
-- 🔍 **Semantic Search** — Find exact video moments using natural language queries  
-- 🧠 **Transcript & Metadata Processing** — Automatic transcript fetching and embedding  
-- ⚡ **Vector Search** — Fast similarity search powered by modern ML models  
-- 🧰 **Modern UI** — Responsive frontend with TailwindCSS and Vite  
-- 📊 **Rich Video Metadata** — Title, description, channel info, views, etc.  
-- 🐳 **Easy Deployment** — Docker / Vercel support  
-- 📝 **Interactive API Docs** — Swagger UI from FastAPI
+📊 Rich Video Metadata — Title, description, channel info, views, etc.  
 
----
+🐳 Easy Deployment — Docker / Vercel support  
 
-## 🧱 Tech Stack
+📝 Interactive API Docs — Swagger UI from FastAPI
 
-| Frontend | Backend | Others |
-|----------|---------|--------|
-| Vite | FastAPI (Python) | TailwindCSS |
-| Node.js | Sentence Transformers | Vercel / Render |
-| React | FAISS / Pinecone | Docker (optional) |
+🧱 Tech Stack
+Frontend
 
----
+Backend
 
-## 🚀 Quick Start
+Others
 
-### 🧰 Prerequisites
-- **Node.js** ≥ 16  
-- **Python** ≥ 3.10  
-- (Optional) **Docker & Docker Compose**  
-- (Optional) API Keys (YouTube, Pinecone, Hugging Face)
+Vite
 
----
+FastAPI (Python)
 
-### 📦 Backend Setup
+TailwindCSS
 
-```bash
-# Navigate to backend directory
+Node.js
+
+Sentence Transformers
+
+Vercel / Render
+
+React
+
+FAISS / Pinecone
+
+Docker (optional)
+
+🚀 Quick Start
+🧰 Prerequisites
+Node.js ≥ 16  
+
+Python ≥ 3.10  
+
+📦 Backend Setup (FastAPI - Python)
+Open your first terminal window and run the following commands:
+
+# Navigate to the project root directory
 cd QueryTube-AI
 
-# Create virtual environment
+# Create a Python virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate # Use 'venv\Scripts\activate' on Windows
 
-# Install dependencies
+# Install Python dependencies
 pip install -r requirements.txt
 
-# Run FastAPI server
+# Run the FastAPI server
 uvicorn app:app --reload
-The backend runs on http://localhost:8000```
+# The backend runs on http://localhost:8000
 
-💻 Frontend Setup
+💻 Frontend Setup (Vite + React)
+Open a second terminal window and run the following commands:
 
-```bash
-Copy code
-# Navigate to frontend root
+# Navigate to the project root directory
 cd QueryTube-AI
 
-# Install dependencies
+# Install Node dependencies
 npm install
 
-# Start development server
+# Start the development server
 npm run dev
-Frontend runs on http://localhost:5173 by default.```
+# The frontend runs on http://localhost:5173 by default, and communicates with the backend on port 8000.
 
 📁 Project Structure
-```bash
-Copy code
 QueryTube-AI/
-│── Screenshots/           # App screenshots
-│── package.json           # Frontend dependencies
-│── requirements.txt       # Backend dependencies
-│── vite.config.js         # Vite configuration
-│── tailwind.config.js     # Tailwind setup
-│── index.html             # Entry point for frontend
-│── vercel.json            # Vercel deployment configuration
-└── ...```
-<p align="center"> Made with ❤️ using FastAPI, Vite, Tailwind, and AI. </p> =
+│── Screenshots/           # App screenshots
+│── package.json           # Frontend dependencies
+│── requirements.txt       # Backend dependencies
+│── vite.config.js         # Vite configuration
+│── tailwind.config.js     # Tailwind setup
+│── index.html             # Entry point for frontend
+│── vercel.json            # Vercel deployment configuration
+└── ...
+
+<p align="center"> Made with ❤️ using FastAPI, Vite, Tailwind, and AI. </p>
