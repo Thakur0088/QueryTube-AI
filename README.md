@@ -78,10 +78,11 @@ pip install -r requirements.txt
 
 # Run FastAPI server
 uvicorn app:app --reload
-The backend runs on http://localhost:8000
+The backend runs on http://localhost:8000```
 
 💻 Frontend Setup
-bash
+
+```bash
 Copy code
 # Navigate to frontend root
 cd QueryTube-AI
@@ -91,10 +92,10 @@ npm install
 
 # Start development server
 npm run dev
-Frontend runs on http://localhost:5173 by default.
+Frontend runs on http://localhost:5173 by default.```
 
 📁 Project Structure
-bash
+```bash
 Copy code
 QueryTube-AI/
 │── Screenshots/           # App screenshots
@@ -104,5 +105,5 @@ QueryTube-AI/
 │── tailwind.config.js     # Tailwind setup
 │── index.html             # Entry point for frontend
 │── vercel.json            # Vercel deployment configuration
-└── ...
-<p align="center"> Made with ❤️ using FastAPI, Vite, Tailwind, and AI. </p> ```
+└── ...```
+<p align="center"> Made with ❤️ using FastAPI, Vite, Tailwind, and AI. </p> =
