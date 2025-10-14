@@ -30,38 +30,44 @@ It integrates a **FastAPI backend** and a **React (Vite) frontend**, enabling fa
 
 ---
 
-## 🖥️ Screenshots
 
-<p align="center">
-  <img src="./Screenshots/ss1.png" width="750" alt="Homepage Screenshot">
-</p>
+## 🖼️ Screenshots  
 
-<p align="center">
-  <img src="./Screenshots/ss2.png" width="750" alt="Search Results Screenshot">
-</p>
+### 🏠 Homepage  
+![Homepage Screenshot](./Screenshots/ss1.png)
+
+### 🔍 Search Results  
+![Search Results Screenshot](./Screenshots/ss2.png)
 
 ---
 
-## ⚙️ Project Structure
+## 🧱 Project Structure  
 
 QueryTube-AI/
-├── QueryTube-AI/ # React + Vite frontend
-│ ├── src/
-│ ├── components/
+├── 📁 Screenshots/ # Project images (ss1.png, ss2.png)
+├── 📁 Server/ # FastAPI backend
+│ ├── pycache/
+│ ├── data/
+│ ├── app.py # FastAPI app entry point
+│ └── requirements.txt # Python dependencies
+├── 📁 public/ # Public assets for React
+├── 📁 src/ # Frontend source files
 │ ├── assets/
+│ ├── components/
 │ ├── App.jsx
 │ ├── main.jsx
-│ └── index.html
-│
-├── Server/ # FastAPI backend
-│ ├── app.py
-│ ├── requirements.txt
-│ └── data/
-│
-├── Screenshots/ # Project images (ss1, ss2)
+│ ├── index.css
+│ └── App.css
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package-lock.json
 ├── package.json
-├── requirements.txt
+├── postcss.config.js
 ├── README.md
+├── requirements.txt
+├── tailwind.config.js
+├── vite.config.js
 └── vercel.json
 
 ---
