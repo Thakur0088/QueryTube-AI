@@ -9,7 +9,7 @@
 
 A modern YouTube video search application powered by AI 🚀
 
-[Live Demo](query-tube-ai.vercel.app/) 
+[Live Demo](https://query-tube-ai.vercel.app/ ) 
 
 ![Project Screenshot](QueryTube-AI/Screenshots/ss1.png)
 
