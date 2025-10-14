@@ -1,119 +1,134 @@
-🚀 QueryTube-AI — Intelligent YouTube Semantic Search Platform
-<p align="center">
-  <img src="QueryTube-AI/Screenshots/ss1.png" alt="QueryTube-AI Banner" width="80%" />
-</p>
+# QueryTube-AI 🎥
 
-<p align="center">
-  <a href="https://fastapi.tiangolo.com/">
-    <img src="https://img.shields.io/badge/FastAPI-latest-009688?style=flat&logo=fastapi" alt="FastAPI">
-  </a>
-  <a href="https://vitejs.dev/">
-    <img src="https://img.shields.io/badge/Vite-latest-646CFF?style=flat&logo=vite" alt="Vite">
-  </a>
-  <a href="https://tailwindcss.com/">
-    <img src="https://img.shields.io/badge/TailwindCSS-latest-06B6D4?style=flat&logo=tailwindcss" alt="TailwindCSS">
-  </a>
-  <a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/Python-3.11-blue?style=flat&logo=python" alt="Python">
-  </a>
-  <a href="https://nodejs.org/">
-    <img src="https://img.shields.io/badge/Node.js-latest-339933?style=flat&logo=node.js" alt="Node.js">
-  </a>
-</p>
+<div align="center">
 
-📖 Overview
-QueryTube-AI is a semantic search platform for YouTube that allows users to search through video transcripts and metadata using natural language.  
-Built with a FastAPI backend and a modern Vite + Tailwind frontend, it provides lightning-fast vector search, clean UI, and easy deployment options.
+![GitHub repo size](https://img.shields.io/github/repo-size/Thakur0088/QueryTube-AI)
+![GitHub stars](https://img.shields.io/github/stars/Thakur0088/QueryTube-AI)
+![GitHub forks](https://img.shields.io/github/forks/Thakur0088/QueryTube-AI)
+![GitHub issues](https://img.shields.io/github/issues/Thakur0088/QueryTube-AI)
 
-🌟 Features
-🔍 Semantic Search — Find exact video moments using natural language queries  
+A modern YouTube video search application powered by AI 🚀
 
-🧠 Transcript & Metadata Processing — Automatic transcript fetching and embedding  
+[Live Demo](https://your-deployment-url.vercel.app) 
 
-⚡ Vector Search — Fast similarity search powered by modern ML models  
+![Project Screenshot](QueryTube-AI/Screenshots/ss1.png)
 
-🧰 Modern UI — Responsive frontend with TailwindCSS and Vite  
+</div>
 
-📊 Rich Video Metadata — Title, description, channel info, views, etc.  
+---
 
-🐳 Easy Deployment — Docker / Vercel support  
+## ✨ Features
 
-📝 Interactive API Docs — Swagger UI from FastAPI
+- 🔍 **AI-Powered Search**: Intelligent video search using advanced algorithms
+- 🎨 **Modern UI**: Clean and responsive interface built with React and Tailwind CSS
+- 🌙 **Dark Mode**: Toggle between light and dark themes
+- ⚡ **Fast Performance**: Built with Vite for lightning-fast development and production
+- 🔒 **Secure**: Backend powered by FastAPI with secure API endpoints
 
-🧱 Tech Stack
-Frontend
+## 🛠️ Tech Stack
 
-Backend
+### Frontend
+- **React** - UI Framework
+- **Vite** - Build Tool
+- **Tailwind CSS** - Styling
+- **React Context** - State Management
 
-Others
+### Backend
+- **FastAPI** - API Framework
+- **Python** - Backend Language
+- **Sentence Transformers** - AI Model for Search
 
-Vite
+## 🚀 Getting Started
 
-FastAPI (Python)
+### Prerequisites
+- Node.js (v16 or higher)
+- Python 3.9+
+- npm or yarn
 
-TailwindCSS
+### Installation
 
-Node.js
-
-Sentence Transformers
-
-Vercel / Render
-
-React
-
-FAISS / Pinecone
-
-Docker (optional)
-
-🚀 Quick Start
-🧰 Prerequisites
-Node.js ≥ 16  
-
-Python ≥ 3.10  
-
-(Optional) API Keys (YouTube, Pinecone, Hugging Face)
-
-📦 Backend Setup (FastAPI - Python)
-Open your first terminal window and run the following commands:
-
-# Navigate to the project root directory
+1. Clone the repository
+```bash
+git clone https://github.com/Thakur0088/QueryTube-AI.git
 cd QueryTube-AI
+```
 
-# Create a Python virtual environment
-python -m venv venv
-source venv/bin/activate # Use 'venv\Scripts\activate' on Windows
-
-# Install Python dependencies
-pip install -r requirements.txt
-
-# Run the FastAPI server
-uvicorn app:app --reload
-# The backend runs on http://localhost:8000
-
-💻 Frontend Setup (Vite + React)
-Open a second terminal window and run the following commands:
-
-# Navigate to the project root directory
-cd QueryTube-AI
-
-# Install Node dependencies
+2. Install frontend dependencies
+```bash
 npm install
+```
 
-# Start the development server
+3. Install backend dependencies
+```bash
+cd Server
+pip install -r requirements.txt
+```
+
+4. Start the development servers
+
+Frontend:
+```bash
 npm run dev
-# The frontend runs on http://localhost:5173 by default, and communicates with the backend on port 8000.
+```
 
-📁 Project Structure
-QueryTube-AI/
-│── Screenshots/           # App screenshots
-│── package.json           # Frontend dependencies
-│── requirements.txt       # Backend dependencies
-│── vite.config.js         # Vite configuration
-│── tailwind.config.js     # Tailwind setup
-│── index.html             # Entry point for frontend
-│── vercel.json            # Vercel deployment configuration
-└── ...
+Backend:
+```bash
+cd Server
+uvicorn app:app --reload
+```
 
+## 📸 Screenshots
 
+<div align="center">
+  <img src="Screenshots/ss1.png" alt="Home Page" width="600"/>
+  <img src="Screenshots/ss2.png" alt="Search Results" width="600"/>
+</div>
 
-<p align="center"> Made with ❤️ using FastAPI, Vite, Tailwind, and AI. </p>
+## 🌟 Usage
+
+1. Enter your search query in the search bar
+2. Browse through the AI-enhanced search results
+3. Click on a video to view details
+4. Toggle dark mode using the theme switcher
+
+## 📝 Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+## 🚀 Deployment
+
+### Frontend (Vercel)
+1. Connect your GitHub repository to Vercel
+2. Set the build command to `npm run build`
+3. Set the output directory to `dist`
+
+### Backend
+Deploy the FastAPI backend to your preferred hosting platform (Heroku, AWS, etc.)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Your Name**
+- GitHub: [@Thakur0088](https://github.com/Thakur0088)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
+
+---
+
+<div align="center">
+If you found this project helpful, please consider giving it a ⭐️
+</div>
