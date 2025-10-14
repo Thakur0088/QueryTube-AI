@@ -1,7 +1,7 @@
 # 🚀 QueryTube-AI — Intelligent YouTube Semantic Search Platform
 
 <p align="center">
-  <img src="QueryTube-AI/Screenshots/ss1.png" alt="QueryTube-AI Banner" width="80%" />
+  <img src="QueryTube-AI/Screenshots/ss2.png" alt="QueryTube-AI Banner" width="80%" />
 </p>
 
 <p align="center">
