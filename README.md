@@ -118,7 +118,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 - GitHub: [@Thakur0088](https://github.com/Thakur0088)
-- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/anshdeep-thakur-a6b8b728b/)
+- LinkedIn: [Anshdeep Thakur](https://www.linkedin.com/in/anshdeep-thakur-a6b8b728b/)
 
 ---
 
