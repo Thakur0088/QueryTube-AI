@@ -9,7 +9,7 @@
 
 A modern YouTube video search application powered by AI 🚀
 
-[Live Demo](https://your-deployment-url.vercel.app) 
+[Live Demo](query-tube-ai.vercel.app/) 
 
 ![Project Screenshot](QueryTube-AI/Screenshots/ss1.png)
 
@@ -80,8 +80,8 @@ uvicorn app:app --reload
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="Screenshots/ss1.png" alt="Home Page" width="600"/>
-  <img src="Screenshots/ss2.png" alt="Search Results" width="600"/>
+  <img src="QueryTube-AI/Screenshots/ss1.png" alt="Home Page" width="600"/>
+  <img src="QueryTube-AI/Screenshots/ss2.png" alt="Search Results" width="600"/>
 </div>
 
 ## 🌟 Usage
@@ -91,13 +91,6 @@ uvicorn app:app --reload
 3. Click on a video to view details
 4. Toggle dark mode using the theme switcher
 
-## 📝 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-VITE_API_URL=http://localhost:8000
-```
 
 ## 🚀 Deployment
 
@@ -125,7 +118,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 - GitHub: [@Thakur0088](https://github.com/Thakur0088)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/your-profile)
+- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/anshdeep-thakur-a6b8b728b/)
 
 ---
 
