@@ -1,152 +1,120 @@
-# 🎥 VidSearch AI — YouTube Semantic Video Search Engine
+# 🎥 QueryTube-AI — Smart YouTube Video Search Platform
 
-> An advanced AI-powered platform that allows users to search YouTube videos **semantically** using natural language queries, powered by **transformer embeddings** and **FastAPI + React** stack.
-
----
-
-## 🚀 Overview
-
-**VidSearch AI** is a modern YouTube semantic search system that enables users to find videos based on **meaning**, not just keywords.  
-It uses **SentenceTransformer** models to generate vector embeddings for video titles and transcripts, and then ranks the most relevant videos based on **cosine similarity**.
-
-The system provides:
-- A **FastAPI** backend for vector search and indexing
-- A **React-based frontend** for interactive searching
-- **SQLite** user authentication (Sign Up / Login)
-- **Voice Search**, **Dark/Light mode**, and **Search History**
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104.0-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18.0-blue?style=flat&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=flat&logo=vite)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-06B6D4?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
+[![Python](https://img.shields.io/badge/Python-3.11-yellow?style=flat&logo=python)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
-## 🧠 Features
+## 🌐 Overview
 
-✅ **Semantic Search:**  
-Search YouTube videos using natural language — e.g., “Why do humans sleep?”  
+**QueryTube-AI** is an intelligent semantic video search platform that lets users explore YouTube content using natural language queries.  
+It integrates a **FastAPI backend** and a **React (Vite) frontend**, enabling fast and context-aware video discovery through transcript and metadata analysis.
 
-✅ **Transformer-based Embeddings:**  
-Built using `all-mpnet-base-v2` model from SentenceTransformers  
-
-✅ **Optimized Ranking:**  
-Supports cosine, Euclidean, and Manhattan similarity metrics  
-
-✅ **User Authentication:**  
-Secure sign-in / sign-up using SQLite and JWT  
-
-✅ **Voice Search:**  
-Search queries using your microphone input  
-
-✅ **History Tracking:**  
-View or delete your search history anytime  
-
-✅ **Modern UI:**  
-Fully responsive **React** frontend with **dark/light mode toggle**, powered by **Vite**  
-
-✅ **FastAPI Backend:**  
-Robust backend that handles embeddings, similarity search, and query responses  
+> 🚀 Built with cutting-edge tech to redefine how you search YouTube.
 
 ---
 
-## 🧩 Tech Stack
+## ✨ Features
 
-| Layer | Technology |
-|-------|-------------|
-| **Frontend** | React (Vite), TailwindCSS |
-| **Backend** | FastAPI (Python 3.11) |
-| **Model** | SentenceTransformer (`all-mpnet-base-v2`) |
-| **Database** | SQLite (User Auth + History) |
-| **API Integration** | YouTube Data API |
-| **Embeddings Visualization** | PCA 2D Projection |
-| **Deployment** | Docker / Render / Railway (optional) |
+- 🔍 **Semantic Video Search** — Find relevant YouTube clips using natural language
+- 🧠 **AI-Powered Understanding** — Uses embeddings for context-aware search
+- 🎨 **Modern UI** — Sleek React + TailwindCSS frontend
+- ⚡ **FastAPI Backend** — Lightweight and high-performance Python API
+- 🧩 **Reusable Components** — Modular structure for easy scalability
+- 🐳 **Docker Ready** — Seamless deployment setup
+- 📜 **Easy Local Setup** — Simple commands to run frontend and backend
 
 ---
 
-## ⚙️ Setup Instructions
+## 🖥️ Screenshots
 
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/<your-username>/VidSearchAI.git
-cd VidSearchAI
-2️⃣ Backend Setup (FastAPI)
+<p align="center">
+  <img src="./Screenshots/ss1.png" width="750" alt="Homepage Screenshot">
+</p>
+
+<p align="center">
+  <img src="./Screenshots/ss2.png" width="750" alt="Search Results Screenshot">
+</p>
+
+---
+
+## ⚙️ Project Structure
+
+QueryTube-AI/
+├── QueryTube-AI/ # React + Vite frontend
+│ ├── src/
+│ ├── components/
+│ ├── assets/
+│ ├── App.jsx
+│ ├── main.jsx
+│ └── index.html
+│
+├── Server/ # FastAPI backend
+│ ├── app.py
+│ ├── requirements.txt
+│ └── data/
+│
+├── Screenshots/ # Project images (ss1, ss2)
+├── package.json
+├── requirements.txt
+├── README.md
+└── vercel.json
+
+---
+
+## 🚀 Quick Start
+
+### 🧩 Backend (FastAPI)
+1. Navigate to the backend folder:
+   ```bash
+   cd Server
+Install dependencies:
+
 bash
 Copy code
-cd backend
 pip install -r requirements.txt
-uvicorn main:app --reload
-3️⃣ Frontend Setup (React)
+Run the backend:
+
 bash
 Copy code
-cd frontend
+uvicorn app:app --reload
+Server runs on: http://127.0.0.1:8000
+
+💻 Frontend (React + Vite)
+Navigate to frontend:
+
+bash
+Copy code
+cd vidsearch-frontend
+Install dependencies:
+
+bash
+Copy code
 npm install
-npm run dev
-The app will start at:
-🔗 Frontend: http://localhost:5173
-⚙️ Backend API: http://localhost:8000
-
-🔍 Example Query
-User Input: “Why do humans dream?”
-Backend Process:
-
-Encodes query using all-mpnet-base-v2
-
-Computes cosine similarity with stored video embeddings
-
-Returns top-5 most relevant videos with titles, links, and transcripts
-
-📊 Model & Embedding Info
-Model used: sentence-transformers/all-mpnet-base-v2
-
-Embedding dimension: 768
-
-Each video’s title and transcript are embedded
-
-Embeddings stored in CSV/Parquet format for fast retrieval
-
-Dimensionality visualization (PCA 2D) available
-
-🧑‍💻 Authentication Features
-Sign-up / Login required before access
-
-Passwords securely hashed
-
-JWT tokens used for protected routes
-
-Personal history saved per user
-
-🌙 UI Highlights
-🎤 Voice Search
-
-🌓 Dark / Light Mode Toggle
-
-🧭 Search History Panel
-
-🎞️ Paginated Results (6–8 videos per page)
-
-👤 Profile & Settings Panel
-
-🧾 Example Output
-Query	Metric	Top-K	Best Score
-"Human Evolution"	Cosine	5	0.73
-"Stem Cells"	Euclidean	5	-0.82
-"Spicy Food"	Manhattan	5	-18.78
-
-📦 Deployment
-Easily deploy with Docker Compose:
+Start development server:
 
 bash
 Copy code
-docker-compose up --build
-Or host frontend on Vercel / Netlify and backend on Render / Railway.
+npm run dev
+Frontend runs on: http://localhost:5173
 
-📜 License
-MIT License © 2025 [Your Name]
+🧠 Tech Stack
+Layer	Technology
+Frontend	React (Vite), TailwindCSS
+Backend	FastAPI, Python
+Deployment	Vercel / Docker
+Styling	TailwindCSS
+Package Manager	npm + pip
 
-📸 Screenshots
-Home	Search Results
+🧰 Development Notes
+Keep your backend and frontend running simultaneously for full functionality.
 
-💬 Acknowledgments
-SentenceTransformers
+API requests are served from FastAPI and consumed in the React app.
 
-FastAPI
+All dependencies are listed in their respective requirements.txt and package.json.
 
-React
-
-YouTube Data API
+<p align="center"> Made with ❤️ by <b>Anshdeep</b> </p> ```
