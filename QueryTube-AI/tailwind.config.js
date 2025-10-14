@@ -41,7 +41,7 @@ export default {
         'secondary-foreground': 'hsl(var(--secondary-foreground))',
         muted: 'hsl(var(--muted))',
         'muted-foreground': 'hsl(var(--muted-foreground))',
-        'custom-accent': 'hsl(var(--accent))', // Keep this as a separate custom color
+        'custom-accent': 'hsl(var(--accent))',
         'accent-foreground': 'hsl(var(--accent-foreground))',
         destructive: 'hsl(var(--destructive))',
         'destructive-foreground': 'hsl(var(--destructive-foreground))',
