@@ -51,26 +51,27 @@ function SearchPage() {
   const handleSearch = async (searchQuery) => {
     const q = searchQuery?.trim();
     if (!q) return;
-    
+
     setQuery(q);
     setLoading(true);
     setError('');
     setCurrentPage(1);
-    
+
     try {
-      const res = await fetch('http://localhost:8000/search', {
+      const res = await fetch('https://querytube-ai.onrender.com/search', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           text: q,
-          top_k: 10
+          top_k: 10,
         }),
       });
-      
+
+
       if (!res.ok) throw new Error('Network error');
       const data = await res.json();
       setResults(data.results || []);
-      
+
       // Add to search history
       const history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
       const newHistory = [
@@ -79,7 +80,7 @@ function SearchPage() {
       ].slice(0, 20);
       localStorage.setItem('searchHistory', JSON.stringify(newHistory));
       setSearchHistory(newHistory);
-      
+
     } catch (e) {
       setError('Failed to fetch results');
     } finally {
@@ -134,9 +135,9 @@ function SearchPage() {
     return (
       <>
         <HomePage />
-        <AuthModal 
-          isOpen={showAuthModal} 
-          onClose={() => setShowAuthModal(false)} 
+        <AuthModal
+          isOpen={showAuthModal}
+          onClose={() => setShowAuthModal(false)}
         />
       </>
     );
@@ -148,9 +149,9 @@ function SearchPage() {
 
   return (
     <div className="min-h-dvh text-zinc-900 dark:text-zinc-100">
-      <Header 
-        title={headerAccent} 
-        isDark={isDark} 
+      <Header
+        title={headerAccent}
+        isDark={isDark}
         onToggle={() => setIsDark((v) => !v)}
         onHistoryToggle={() => setShowHistory((v) => !v)}
         onSettingsClick={() => setShowSettings(true)}
@@ -158,68 +159,68 @@ function SearchPage() {
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
         <div className="space-y-6">
-            <div className="glass-card p-6">
-              <SearchBar 
-                onSearch={handleSearch} 
-                placeholder="Ask about science, health, or life…" 
+          <div className="glass-card p-6">
+            <SearchBar
+              onSearch={handleSearch}
+              placeholder="Ask about science, health, or life…"
+              disabled={loading}
+            />
+          </div>
+
+          <div className="glass-card p-2">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-accent-500/40 to-transparent" />
+          </div>
+
+          {loading && (
+            <div className="glass-card p-8 flex items-center justify-center">
+              <div className="h-5 w-5 mr-3 rounded-full border-2 border-accent-500 border-t-transparent animate-spin" />
+              <span className="tracking-wide">Searching the videoverse<span className="loading-dots"></span></span>
+            </div>
+          )}
+
+          {error && (
+            <div className="glass-card p-4 border-red-200 dark:border-red-900">
+              <p className="text-red-600 dark:text-red-400">{error}</p>
+            </div>
+          )}
+
+          {!loading && results.length > 0 && (
+            <>
+              <section className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-foreground">
+                    {results.length} result{results.length !== 1 ? 's' : ''} found
+                  </h2>
+                  <div className="text-sm text-muted-foreground">
+                    Page {currentPage} of {totalPages}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {paginatedResults.map((r) => (
+                    <ResultCard key={r.video_id} result={r} />
+                  ))}
+                </div>
+              </section>
+
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={setCurrentPage}
                 disabled={loading}
               />
+            </>
+          )}
+
+          {!loading && query && results.length === 0 && (
+            <div className="glass-card p-8 text-center">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-lg font-semibold text-foreground mb-2">No videos found</h3>
+              <p className="text-muted-foreground">
+                Try different search terms or check your spelling
+              </p>
             </div>
-
-            <div className="glass-card p-2">
-              <div className="h-px w-full bg-gradient-to-r from-transparent via-accent-500/40 to-transparent" />
-            </div>
-
-            {loading && (
-              <div className="glass-card p-8 flex items-center justify-center">
-                <div className="h-5 w-5 mr-3 rounded-full border-2 border-accent-500 border-t-transparent animate-spin" />
-                <span className="tracking-wide">Searching the videoverse<span className="loading-dots"></span></span>
-              </div>
-            )}
-
-            {error && (
-              <div className="glass-card p-4 border-red-200 dark:border-red-900">
-                <p className="text-red-600 dark:text-red-400">{error}</p>
-              </div>
-            )}
-
-            {!loading && results.length > 0 && (
-              <>
-                <section className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-lg font-semibold text-foreground">
-                      {results.length} result{results.length !== 1 ? 's' : ''} found
-                    </h2>
-                    <div className="text-sm text-muted-foreground">
-                      Page {currentPage} of {totalPages}
-                    </div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {paginatedResults.map((r) => (
-                      <ResultCard key={r.video_id} result={r} />
-                    ))}
-                  </div>
-                </section>
-
-                <Pagination
-                  currentPage={currentPage}
-                  totalPages={totalPages}
-                  onPageChange={setCurrentPage}
-                  disabled={loading}
-                />
-              </>
-            )}
-
-            {!loading && query && results.length === 0 && (
-              <div className="glass-card p-8 text-center">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">No videos found</h3>
-                <p className="text-muted-foreground">
-                  Try different search terms or check your spelling
-                </p>
-              </div>
-            )}
+          )}
         </div>
       </main>
 
@@ -236,7 +237,7 @@ function SearchPage() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-                Discover videos through intelligent semantic search powered by cutting-edge AI technology. 
+                Discover videos through intelligent semantic search powered by cutting-edge AI technology.
                 Find exactly what you're looking for with natural language understanding.
               </p>
               <div className="flex items-center gap-4">
@@ -312,7 +313,7 @@ function SearchPage() {
               <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span>© 2024 QueryTube AI. All rights reserved.</span>
                 <div className="flex items-center gap-2">
-                <span>Built with passion and precision for the future of video discovery</span>
+                  <span>Built with passion and precision for the future of video discovery</span>
 
                 </div>
               </div>
@@ -334,11 +335,11 @@ function SearchPage() {
       {showHistory && (
         <div className="fixed inset-0 z-50 flex">
           {/* Overlay */}
-          <div 
+          <div
             className="flex-1 bg-black/50 backdrop-blur-sm"
             onClick={() => setShowHistory(false)}
           />
-          
+
           {/* History Panel */}
           <div className="w-1/2 bg-background border-l border-border/50 shadow-2xl">
             <div className="h-full flex flex-col">
@@ -390,7 +391,7 @@ function SearchPage() {
                         AI Enhanced
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2">
                       {searchHistory.map((item, index) => {
                         const category = getSearchCategory(item.query);
