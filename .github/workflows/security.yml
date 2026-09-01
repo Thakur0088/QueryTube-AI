@@ -8,4 +8,4 @@ on:
 
 jobs:
   security-audit:
-    uses: Thakur0088/cloudshield-ai/.github/workflows/cloudshield-devsecops.yml@main
+    uses: Thakur0088/CLOUDSHIELD_AI/.github/workflows/cloudshield-devsecops.yml@main
