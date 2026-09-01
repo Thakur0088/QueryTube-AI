@@ -1,0 +1,11 @@
+name: CloudShield Security Audit
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  security-audit:
+    uses: Thakur0088/cloudshield-ai/.github/workflows/cloudshield-devsecops.yml@main
